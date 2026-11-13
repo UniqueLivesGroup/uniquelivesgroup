@@ -1,0 +1,18 @@
+UNIQUE LIVES GROUP - V12 TEXTOS
+14/09/2026
+
+Cambios aplicados en index.html:
+- Nuevo titular, texto lateral y enlace de apertura al ecosistema.
+- Conceptos de "Una sola experiencia" mas pequenos, sin puntos y con el nuevo cierre.
+- Encabezado y texto de presentacion de las empresas actualizados.
+- Subtitulos de las cinco empresas debajo de sus logos, sin solaparse con los botones.
+- Seccion "El metodo" con titulo, explicacion y los cinco pasos solicitados.
+
+Los otros cinco HTML, los archivos de assets y la configuracion de los formularios
+se conservan sin modificaciones respecto a los archivos recibidos.
+
+Para actualizar una copia existente de esta misma web basta con reemplazar
+index.html, conservando el nombre y la carpeta assets en su ubicacion actual.
+El ZIP tambien contiene todos los archivos de la web para disponer de una copia completa.
+
+No se ha realizado ningun envio real de formularios en esta revision.

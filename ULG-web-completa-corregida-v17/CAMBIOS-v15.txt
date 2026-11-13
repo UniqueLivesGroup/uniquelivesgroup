@@ -1,0 +1,1 @@
+v15: En la home, Segur-Care incorpora el boton Visitar web enlazado a https://www.segur-care.com/. En las cinco paginas internas se sustituyen los nombres escritos en la cabecera por logos oficiales, mas visibles, con adaptacion movil y contraste en scroll. No se modifican formularios ni contenido de otras secciones.
