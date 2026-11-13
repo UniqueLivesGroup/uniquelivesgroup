@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Segur-Care, correduría de seguros de Unique Lives Group. Asesoramiento independiente, revisión de pólizas y acompañamiento personalizado.">
+<title>Segur-Care — Unique Lives Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0;
+  --surface:#eeece5;
+  --surface-soft:#f1f3ef;
+  --text:#1f2a24;
+  --muted:#69746d;
+  --green:#61786a;
+  --green-dark:#31483c;
+  --green-light:#dfe7e1;
+  --white:#ffffff;
+  --hair:rgba(31,42,36,.13);
+  --serif:'Fraunces',serif;
+  --sans:'Inter',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1180px,calc(100% - 112px));margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:26px}
+.section-title{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,66px);line-height:1.08;letter-spacing:-.025em;max-width:820px}
+.section-copy{color:var(--muted);font-size:15px;line-height:1.9;max-width:620px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:999px;font-size:13px;font-weight:500;transition:.25s ease;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--green-dark);color:#fff}
+.btn-primary:hover{background:var(--green)}
+.btn-light{color:#fff;border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.btn-light:hover{background:rgba(255,255,255,.18)}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 44px;color:#fff;border-bottom:1px solid transparent;transition:.35s ease}
+.nav.solid{background:rgba(247,245,240,.94);color:var(--text);border-color:var(--hair);backdrop-filter:blur(18px)}
+.nav-brand{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:12px}
+.nav-link{font-size:12px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.32)}
+.nav.solid .nav-link{border-color:var(--hair)}
+.nav-link:hover{opacity:.68}
+
+/* HERO */
+.hero{height:100svh;min-height:680px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=88') center/cover no-repeat;transform:scale(1.05);transition:transform 7s ease}
+.hero-bg.loaded{transform:scale(1)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,34,27,.73) 0%,rgba(20,34,27,.38) 47%,rgba(20,34,27,.16) 100%),linear-gradient(0deg,rgba(18,30,24,.55),transparent 50%)}
+.hero-inner{position:relative;z-index:2;padding:0 56px 72px;width:100%;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:70px;align-items:end;color:#fff}
+.hero-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.66);margin-bottom:30px}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,6.3vw,88px);line-height:1.01;letter-spacing:-.03em;max-width:780px}
+.hero-right{padding-bottom:8px}
+.hero-right p{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.8;color:rgba(255,255,255,.72);margin-bottom:30px;max-width:360px}
+
+/* Botones del hero de Segur-Care */
+.hero-cta-group{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+@media(max-width:680px){.hero-cta-group{gap:10px}.hero-cta-group .btn{padding:12px 17px;font-size:12px}}
+
+/* INTRO */
+.intro{padding:150px 0 140px}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:110px;align-items:start}
+.intro-copy{padding-top:14px}
+.intro-copy p{margin-bottom:24px}
+
+/* PILLARS */
+.pillars{background:var(--white);padding:0 0 130px}
+.pillar-image{height:560px;overflow:hidden}
+.pillar-image img{object-position:center 43%}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-left:1px solid var(--hair)}
+.pillar{padding:44px 34px 48px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);min-height:290px}
+.pillar-number{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:.16em;margin-bottom:52px}
+.pillar h3{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.2;margin-bottom:18px}
+.pillar p{font-size:13.5px;line-height:1.8;color:var(--muted)}
+
+/* SERVICES */
+.services{padding:150px 0 140px}
+.services-head{display:flex;justify-content:space-between;gap:60px;align-items:end;margin-bottom:78px}
+.services-head .section-copy{max-width:420px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{background:var(--white);border:1px solid var(--hair);overflow:hidden;transition:.35s ease}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(31,42,36,.08)}
+.service-image{height:260px;overflow:hidden}
+.service-image img{transition:transform .65s ease}
+.service-card:hover img{transform:scale(1.045)}
+.service-body{padding:30px 28px 34px}
+.service-tag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:15px}
+.service-body h3{font-family:var(--serif);font-size:27px;font-weight:400;margin-bottom:14px}
+.service-body p{font-size:13.5px;line-height:1.8;color:var(--muted)}
+
+/* PROCESS */
+.process{background:var(--green-dark);color:#fff;padding:150px 0}
+.process .eyebrow{color:#b9c7be}
+.process-intro{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:end;margin-bottom:90px}
+.process-intro p{color:rgba(255,255,255,.62)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18)}
+.step{padding:34px 30px 10px 0;border-right:1px solid rgba(255,255,255,.18);min-height:270px}
+.step:not(:first-child){padding-left:30px}
+.step:last-child{border-right:0}
+.step-number{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.48);margin-bottom:60px}
+.step h3{font-family:var(--serif);font-size:29px;font-weight:300;margin-bottom:15px}
+.step p{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.58)}
+
+/* REVIEW */
+.review{padding:150px 0}
+.review-card{display:grid;grid-template-columns:1fr 1fr;background:var(--green-light);min-height:550px}
+.review-image{overflow:hidden}
+.review-image img{object-position:center}
+.review-content{padding:82px 72px;display:flex;flex-direction:column;justify-content:center}
+.review-content .section-title{font-size:clamp(38px,4.5vw,58px);margin-bottom:34px}
+.review-content p{margin-bottom:34px}
+
+/* FORM */
+.contact{padding:150px 0;background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:110px;align-items:start}
+.contact-copy .section-title{font-size:clamp(38px,4.5vw,60px);margin-bottom:34px}
+.contact-copy p{color:var(--muted);line-height:1.9;max-width:440px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:28px 22px}
+.field{display:flex;flex-direction:column;gap:10px}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;border:0;border-bottom:1px solid var(--hair);background:transparent;padding:10px 0 14px;color:var(--text);outline:none;border-radius:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green-dark)}
+.field textarea{min-height:120px;resize:vertical}
+.form-actions{grid-column:1/-1;display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:10px}
+.privacy{font-size:11px;color:var(--muted);max-width:390px}
+.success{display:none;grid-column:1/-1;padding:18px 20px;background:var(--green-light);font-size:13px;color:var(--green-dark)}
+
+/* FOOTER */
+footer{padding:34px 44px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .wrap{width:min(100% - 48px,900px)}
+  .hero-inner{padding:0 32px 54px;grid-template-columns:1fr;gap:28px}
+  .hero-right{max-width:480px}
+  .intro-grid,.process-intro,.contact-grid{grid-template-columns:1fr;gap:52px}
+  .pillars-grid,.process-grid{grid-template-columns:1fr 1fr}
+  .service-card:last-child{grid-column:1/-1}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .services-head{align-items:start;flex-direction:column}
+  .review-card{grid-template-columns:1fr}
+  .review-image{height:440px}
+}
+@media(max-width:680px){
+  .nav{padding:16px 20px}
+  .nav-links .nav-link:first-child{display:none}
+  .wrap{width:calc(100% - 40px)}
+  .hero{min-height:720px}
+  .hero-inner{padding:0 20px 46px}
+  .hero h1{font-size:46px}
+  .hero-right p{font-size:15px}
+  .intro,.services,.review,.contact,.process{padding:96px 0}
+  .pillars{padding-bottom:96px}
+  .pillar-image{height:340px}
+  .pillars-grid,.services-grid,.process-grid,.form{grid-template-columns:1fr}
+  .service-card:last-child{grid-column:auto}
+  .pillar,.step{border-right:0}
+  .step,.step:not(:first-child){padding:30px 0;border-bottom:1px solid rgba(255,255,255,.18);min-height:auto}
+  .step-number{margin-bottom:32px}
+  .review-content{padding:58px 28px}
+  .review-image{height:300px}
+  .field.full{grid-column:auto}
+  .form-actions,.success{grid-column:auto}
+  footer{padding:26px 20px;flex-direction:column;text-align:center}
+}
+</style>
+
+<style id="ulg-switcher-style">
+.ulg-switcher{position:fixed;right:18px;bottom:18px;z-index:9999;font-family:Arial,sans-serif;display:flex;gap:8px;align-items:flex-end}.ulg-home,.ulg-switch-btn{border:1px solid rgba(255,255,255,.35);background:rgba(20,20,20,.82);color:#fff!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:11px 15px;border-radius:999px;font-size:12px;line-height:1;text-decoration:none!important;box-shadow:0 8px 28px rgba(0,0,0,.18)}.ulg-switch{position:relative}.ulg-switch-btn{cursor:pointer}.ulg-switch-menu{position:absolute;right:0;bottom:48px;width:235px;padding:9px;background:rgba(250,248,242,.98);color:#171512;border:1px solid rgba(23,21,18,.14);box-shadow:0 18px 55px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}.ulg-switch:hover .ulg-switch-menu,.ulg-switch:focus-within .ulg-switch-menu{opacity:1;visibility:visible;transform:none}.ulg-switch-menu a{display:block;color:#171512!important;text-decoration:none!important;padding:10px 11px;border-bottom:1px solid rgba(23,21,18,.08);font-size:12px}.ulg-switch-menu a:last-child{border-bottom:0}.ulg-switch-menu a:hover{background:#f0ece4}@media(max-width:600px){.ulg-switcher{right:10px;bottom:10px}.ulg-home{display:none}.ulg-switch-menu{width:215px}}
+</style>
+
+<style id="ulg-mobile-v5">
+@media(max-width:1000px){
+  .wrap{width:calc(100% - 48px)!important}
+  .hero{min-height:720px!important}
+  .hero-inner{padding:0 28px 52px!important;gap:28px!important}
+  .hero h1{font-size:clamp(46px,9vw,72px)!important;max-width:100%!important}
+  .intro,.services,.review,.contact,.process{padding:96px 0!important}
+  .intro-grid,.process-intro,.contact-grid{gap:52px!important}
+  .pillars-grid,.process-grid{grid-template-columns:1fr 1fr!important}
+  .services-grid{grid-template-columns:1fr 1fr!important}
+  .review-content{padding:64px 50px!important}
+}
+@media(max-width:680px){
+  .nav{padding:14px 16px!important}
+  .wrap{width:calc(100% - 32px)!important}
+  .hero{min-height:680px!important}
+  .hero-inner{padding:0 18px 40px!important}
+  .hero h1{font-size:42px!important;line-height:1.02!important}
+  .hero-right p{font-size:15px!important;line-height:1.65!important}
+  .intro,.services,.review,.contact,.process{padding:72px 0!important}
+  .section-title{font-size:39px!important}
+  .pillar-image{height:300px!important}
+  .pillars-grid,.services-grid,.process-grid{grid-template-columns:1fr!important}
+  .pillar{min-height:auto!important;padding:30px 22px!important}
+  .pillar-number{margin-bottom:30px!important}
+  .service-image{height:230px!important}
+  .process-intro{margin-bottom:48px!important}
+  .step,.step:not(:first-child){padding:26px 0!important}
+  .review-image{height:280px!important}
+  .review-content{padding:48px 24px!important}
+  .form{grid-template-columns:1fr!important}
+  .field.full,.form-actions,.success{grid-column:1!important}
+  footer{padding:24px 16px 90px!important}
+  .ulg-switcher{left:10px!important;right:10px!important;justify-content:flex-end!important}
+}
+</style>
+
+<style id="ulg-v15-company-nav-logos">
+/* Logos oficiales en la cabecera de cada empresa */
+.ulg-brand-logo{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto;line-height:1!important;min-width:0;max-width:45vw;text-decoration:none!important}
+.ulg-brand-logo .ulg-nav-logo{display:block!important;position:static!important;width:215px!important;max-width:100%!important;height:auto!important;max-height:78px!important;object-fit:contain!important;object-position:left center!important;filter:none;opacity:1!important}
+.header.scrolled .ulg-nav-logo,.nav.scrolled .ulg-nav-logo,.nav.solid .ulg-nav-logo{filter:brightness(0)!important}
+@media(max-width:900px){.ulg-brand-logo .ulg-nav-logo{width:160px!important;max-height:66px!important}}
+@media(max-width:560px){.ulg-brand-logo{max-width:42vw}.ulg-brand-logo .ulg-nav-logo{width:160px!important;max-height:52px!important}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a class="nav-brand ulg-brand-logo" href="index.html"><img class="ulg-nav-logo" src="assets/nav-segur-care-white.png" alt="Segur-Care"></a>
+  <div class="nav-links">
+    <a class="nav-link" href="#seguros">Seguros</a>
+    <a class="nav-link" href="#contacto">Revisar mis pólizas</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-kicker">Segur-Care · Unique Lives Group</p>
+      <h1>La tranquilidad de saber que estás bien protegido.</h1>
+    </div>
+    <div class="hero-right">
+      <p>Analizamos cada caso de forma independiente para encontrar la solución que mejor se adapta a ti.</p>
+      <div class="hero-cta-group">
+        <a class="btn btn-light" href="#contacto">Solicitar asesoramiento</a>
+        <a class="btn btn-light" href="https://www.segur-care.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap intro-grid reveal">
+      <div>
+        <p class="eyebrow">Nuestra manera de cuidar</p>
+        <h2 class="section-title">No elegimos una aseguradora. Elegimos la solución que mejor te protege.</h2>
+      </div>
+      <div class="intro-copy section-copy">
+        <p>Un buen seguro no debería generar más preguntas. Debería darte la tranquilidad de saber que alguien ha revisado cada detalle pensando en ti.</p>
+        <p>En Segur-Care estudiamos tus necesidades, comparamos distintas compañías y te explicamos cada opción con claridad. También te acompañamos cuando llega el momento de utilizar tu seguro.</p>
+        <a class="btn btn-primary" href="#como-trabajamos">Así trabajamos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillar-image"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2200&q=85" alt="Familia disfrutando de un momento cotidiano"></div>
+    <div class="pillars-grid">
+      <article class="pillar reveal"><p class="pillar-number">01</p><h3>Asesoramiento independiente</h3><p>Estudiamos cada caso sin recomendar productos innecesarios ni soluciones estándar.</p></article>
+      <article class="pillar reveal"><p class="pillar-number">02</p><h3>Comparativa entre compañías</h3><p>Analizamos diferentes aseguradoras para encontrar una cobertura adecuada y equilibrada.</p></article>
+      <article class="pillar reveal"><p class="pillar-number">03</p><h3>Gestión personalizada</h3><p>Tienes un interlocutor que conoce tu situación y te explica cada decisión con claridad.</p></article>
+      <article class="pillar reveal"><p class="pillar-number">04</p><h3>Acompañamiento en siniestros</h3><p>Cuando surge un problema, te ayudamos a gestionar el proceso y defender tus intereses.</p></article>
+    </div>
+  </section>
+
+  <section class="services" id="seguros">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <div><p class="eyebrow">Soluciones de protección</p><h2 class="section-title">Seguros pensados para cada etapa de tu vida.</h2></div>
+        <p class="section-copy">Revisamos el conjunto de tus necesidades para evitar duplicidades, detectar carencias y construir una protección coherente.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=82" alt="Seguro de hogar"></div><div class="service-body"><p class="service-tag">Hogar</p><h3>Seguro de Hogar</h3><p>Protegemos tu vivienda para que tú solo te preocupes de disfrutarla.</p></div></article>
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82" alt="Seguro de vida"></div><div class="service-body"><p class="service-tag">Vida</p><h3>Seguro de Vida</h3><p>Una cobertura pensada para cuidar de quienes más importan, ahora y en el futuro.</p></div></article>
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=82" alt="Seguro de salud"></div><div class="service-body"><p class="service-tag">Salud</p><h3>Seguro de Salud</h3><p>Acceso ágil a atención médica y coberturas adaptadas a tu situación personal.</p></div></article>
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=82" alt="Seguro de automóvil"></div><div class="service-body"><p class="service-tag">Movilidad</p><h3>Seguro de Auto</h3><p>La protección que necesitas en carretera, sin pagar por coberturas que no utilizas.</p></div></article>
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82" alt="Seguro para empresas"></div><div class="service-body"><p class="service-tag">Empresas</p><h3>Seguro de Empresa</h3><p>Soluciones para proteger tu actividad, tu equipo y todo lo que has construido.</p></div></article>
+        <article class="service-card reveal"><div class="service-image"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=82" alt="Responsabilidad civil"></div><div class="service-body"><p class="service-tag">Responsabilidad</p><h3>Responsabilidad Civil</h3><p>Coberturas para profesionales, empresas y actividades que requieren una protección específica.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="como-trabajamos">
+    <div class="wrap">
+      <div class="process-intro reveal">
+        <div><p class="eyebrow">Así trabajamos</p><h2 class="section-title">Un proceso claro, cercano y sin complicaciones.</h2></div>
+        <p class="section-copy">Desde la primera conversación hasta la gestión de un siniestro, tendrás a alguien que te acompaña y habla tu mismo idioma.</p>
+      </div>
+      <div class="process-grid">
+        <article class="step reveal"><p class="step-number">01</p><h3>Escuchamos</h3><p>Queremos entender tu situación, tus prioridades y aquello que deseas proteger.</p></article>
+        <article class="step reveal"><p class="step-number">02</p><h3>Analizamos</h3><p>Revisamos tus seguros actuales, las coberturas contratadas y posibles carencias.</p></article>
+        <article class="step reveal"><p class="step-number">03</p><h3>Comparamos</h3><p>Buscamos entre diferentes compañías la solución que mejor se adapta a ti.</p></article>
+        <article class="step reveal"><p class="step-number">04</p><h3>Te acompañamos</h3><p>Seguimos contigo después de contratar, especialmente cuando realmente lo necesitas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="review">
+    <div class="wrap review-card reveal">
+      <div class="review-image"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=84" alt="Asesoramiento personalizado"></div>
+      <div class="review-content">
+        <p class="eyebrow">Revisión de pólizas</p>
+        <h2 class="section-title">La mejor póliza es la que entiendes.</h2>
+        <p class="section-copy">Analizamos tus seguros actuales para detectar coberturas duplicadas, posibles carencias y oportunidades de mejora. Con claridad y total transparencia.</p>
+        <div><a class="btn btn-primary" href="#contacto">Revisar mis seguros</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Hablemos</p>
+        <h2 class="section-title">Solicita una revisión de tus seguros.</h2>
+        <p>Cuéntanos brevemente qué necesitas. Estudiaremos tu caso de forma personalizada y nos pondremos en contacto contigo para ayudarte a encontrar la solución adecuada.</p>
+      </div>
+      <form class="form reveal" id="reviewForm" action="https://formsubmit.co/administracion@segur-care.com" method="POST"><input type="hidden" name="_subject" value="Nueva solicitud de asesoramiento - Segur-Care"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
+        <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" required></div>
+        <div class="field"><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" type="text" required></div>
+        <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" required></div>
+        <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" required></div>
+        <div class="field full"><label for="seguro">Tipo de seguro</label><select id="seguro" name="seguro" required><option value="" selected disabled>Selecciona una opción</option><option>Hogar</option><option>Vida</option><option>Salud</option><option>Auto</option><option>Empresa</option><option>Responsabilidad Civil</option><option>Revisión general de pólizas</option><option>Otro</option></select></div>
+        <div class="field full"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte"></textarea></div>
+        <div class="form-actions"><button class="btn btn-primary" type="submit">Solicitar asesoramiento</button><p class="privacy">Al enviar el formulario aceptas que contactemos contigo para atender tu solicitud.</p></div>
+        <div class="success" id="success">Gracias. Hemos recibido tu solicitud y nos pondremos en contacto contigo lo antes posible.</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Unique Lives Group</span>
+  <span>Segur-Care · Correduría de seguros</span>
+  <a href="index.html">Volver a Unique Lives Group</a>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>45));
+setTimeout(()=>document.getElementById('heroBg').classList.add('loaded'),80);
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+<div class="ulg-switcher" aria-label="Navegación del grupo">
+  <a class="ulg-home" href="index.html">← Unique Lives Group</a>
+  <div class="ulg-switch">
+    <button class="ulg-switch-btn" type="button">Nuestras marcas ↑</button>
+    <div class="ulg-switch-menu">
+      <a href="luxaran-properties.html">Luxaran Properties</a>
+      <a href="barn-interiors.html">Barn Interiors</a>
+      <a href="renovated-home-lovers.html">Renovated Home Lovers</a>
+      <a href="segur-care.html">Segur-care</a>
+      <a href="luxaran-invest.html">Luxaran Invest</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
