@@ -190,10 +190,19 @@ footer{background:#191715;color:rgba(255,255,255,.55);border-top:1px solid rgba(
   .ulg-switcher{left:10px!important;right:10px!important;justify-content:flex-end!important}
 }
 </style>
+
+<style id="ulg-v15-company-nav-logos">
+/* Logos oficiales en la cabecera de cada empresa */
+.ulg-brand-logo{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto;line-height:1!important;min-width:0;max-width:45vw;text-decoration:none!important}
+.ulg-brand-logo .ulg-nav-logo{display:block!important;position:static!important;width:200px!important;max-width:100%!important;height:auto!important;max-height:78px!important;object-fit:contain!important;object-position:left center!important;filter:none;opacity:1!important}
+.header.scrolled .ulg-nav-logo,.nav.scrolled .ulg-nav-logo,.nav.solid .ulg-nav-logo{filter:brightness(0)!important}
+@media(max-width:900px){.ulg-brand-logo .ulg-nav-logo{width:150px!important;max-height:66px!important}}
+@media(max-width:560px){.ulg-brand-logo{max-width:42vw}.ulg-brand-logo .ulg-nav-logo{width:150px!important;max-height:52px!important}}
+</style>
 </head>
 <body>
 <header class="header" id="header">
-  <a href="index.html" class="brand">Luxaran<small>Properties · Unique Lives Group</small></a>
+  <a href="index.html" class="brand ulg-brand-logo"><img class="ulg-nav-logo" src="assets/nav-luxaran-properties-white.png" alt="Luxaran Properties"></a>
   <nav class="nav" id="nav">
     <a href="#filosofia">Filosofía</a>
     <a href="#servicios">Servicios</a>

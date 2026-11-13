@@ -1,0 +1,4 @@
+v14
+- Reducido el conjunto visual de cada marca en la home: logo, subtítulo y botones.
+- Ajustados tamaños en desktop, tablet y móvil para una composición más elegante y aireada.
+- Solo se ha tocado la home (index.html).

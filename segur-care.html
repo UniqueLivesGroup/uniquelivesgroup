@@ -212,10 +212,19 @@ footer{padding:34px 44px;border-top:1px solid var(--hair);display:flex;justify-c
   .ulg-switcher{left:10px!important;right:10px!important;justify-content:flex-end!important}
 }
 </style>
+
+<style id="ulg-v15-company-nav-logos">
+/* Logos oficiales en la cabecera de cada empresa */
+.ulg-brand-logo{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto;line-height:1!important;min-width:0;max-width:45vw;text-decoration:none!important}
+.ulg-brand-logo .ulg-nav-logo{display:block!important;position:static!important;width:215px!important;max-width:100%!important;height:auto!important;max-height:78px!important;object-fit:contain!important;object-position:left center!important;filter:none;opacity:1!important}
+.header.scrolled .ulg-nav-logo,.nav.scrolled .ulg-nav-logo,.nav.solid .ulg-nav-logo{filter:brightness(0)!important}
+@media(max-width:900px){.ulg-brand-logo .ulg-nav-logo{width:160px!important;max-height:66px!important}}
+@media(max-width:560px){.ulg-brand-logo{max-width:42vw}.ulg-brand-logo .ulg-nav-logo{width:160px!important;max-height:52px!important}}
+</style>
 </head>
 <body>
 <nav class="nav" id="nav">
-  <a class="nav-brand" href="index.html">Segur-Care</a>
+  <a class="nav-brand ulg-brand-logo" href="index.html"><img class="ulg-nav-logo" src="assets/nav-segur-care-white.png" alt="Segur-Care"></a>
   <div class="nav-links">
     <a class="nav-link" href="#seguros">Seguros</a>
     <a class="nav-link" href="#contacto">Revisar mis pólizas</a>

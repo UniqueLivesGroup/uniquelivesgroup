@@ -1,0 +1,19 @@
+UNIQUE LIVES GROUP - V13 - LOGOS Y TEXTOS
+
+Los cinco apartados de empresas mantienen su logotipo original, grande y
+centrado, seguido del subtitulo y los botones. Los logos estan integrados
+dentro del propio index.html: no dependen de un archivo externo para verse.
+Se ha eliminado el posicionamiento con recortes y desplazamientos de los logos.
+No se ha redibujado ningun logotipo; solo se elimina el margen transparente
+para su colocacion y se conserva la presentacion en blanco.
+
+Se conservan todos los textos aprobados de la v12. Las cinco paginas internas,
+las fotografias, enlaces y formularios no se han modificado.
+
+ACTUALIZACION
+Para actualizar la v12, basta con sustituir index.html. Conserva la carpeta
+assets y las otras paginas. Para publicar desde cero, sube todo el contenido
+de este ZIP, manteniendo los nombres y la carpeta assets.
+
+La configuracion de los formularios no implica que se haya comprobado
+la recepcion de un correo real; no se ha enviado ningun formulario de prueba.
